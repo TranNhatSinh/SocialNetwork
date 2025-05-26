@@ -140,3 +140,5 @@ C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\refint\SocialNetwo
 C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\SocialNetworkAPI.pdb
 C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\SocialNetworkAPI.genruntimeconfig.cache
 C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\ref\SocialNetworkAPI.dll
+C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\SocialNetworkAPI.sourcelink.json
+C:\Project\SocialNetworkAPI\SocialNetworkAPI\bin\Debug\net8.0\BCrypt.Net-Next.dll
