@@ -28,14 +28,13 @@ namespace SocialNetworkAPI.Repositories
             return await context.Users.FirstOrDefaultAsync(u => u.Id == id);
         }
 
-        public async Task<User> UpdateProfileAsync(int id, string username, string bio, string profilePicture)
+        public async Task<User> UpdateProfileAsync(int id, string username, string bio)
         {
             var user = await context.Users.FindAsync(id);
             if (user == null) return null;
 
             user.Username = username;
             user.Bio = bio;
-            user.ProfilePicture = profilePicture;
             user.UpdatedAt = DateTime.UtcNow;
 
             await context.SaveChangesAsync();

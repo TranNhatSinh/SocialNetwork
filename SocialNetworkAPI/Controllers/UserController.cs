@@ -42,6 +42,9 @@ namespace SocialNetworkAPI.Controllers
                 Id = user.Id,
                 Username = user.Username,
                 Email = user.Email,
+                FullName = user.FullName,
+                Bio = user.Bio,
+                ProfilePicture = user.ProfilePicture,
                 CreatedAt = user.CreatedAt
             };
 
@@ -62,8 +65,8 @@ namespace SocialNetworkAPI.Controllers
             var updatedUser = await userRepository.UpdateProfileAsync(
                 userId,
                 userUpdateProfileDto.Username,
-                userUpdateProfileDto.Bio,
-                userUpdateProfileDto.ProfilePicture
+                userUpdateProfileDto.Bio
+             
             );
 
             if (updatedUser == null)
