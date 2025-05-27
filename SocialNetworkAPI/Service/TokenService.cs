@@ -23,6 +23,7 @@ namespace SocialNetworkAPI.Service
             new Claim(JwtRegisteredClaimNames.Sub, userId.ToString()),
             new Claim(JwtRegisteredClaimNames.Email, email),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+            new Claim(ClaimTypes.Email, email),
             new Claim(ClaimTypes.NameIdentifier, userId.ToString()),
         };
             var token = new JwtSecurityToken(

@@ -41,5 +41,16 @@ namespace SocialNetworkAPI.Repositories
             await context.SaveChangesAsync();
             return user;
         }
+
+        public async Task<User> UpdateAvatarAsync(int id, string avatarUrl)
+        {
+            var user = await context.Users.FindAsync(id);
+            if (user == null) return null;
+
+            user.ProfilePicture = avatarUrl;
+            context.Users.Update(user);
+            await context.SaveChangesAsync();
+            return user;
+        }
     }
 }

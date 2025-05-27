@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SocialNetworkAPI.DTOs;
 using SocialNetworkAPI.Repositories;
+using SocialNetworkAPI.Service;
 using System.Security.Claims;
 
 namespace SocialNetworkAPI.Controllers
@@ -12,10 +13,12 @@ namespace SocialNetworkAPI.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserRepository userRepository;
+        private readonly IPhotoService photoService;
 
-        public UserController(IUserRepository userRepository)
+        public UserController(IUserRepository userRepository, IPhotoService photoService)
         {
             this.userRepository = userRepository;
+            this.photoService = photoService;
         }
 
         [HttpGet]
@@ -77,6 +80,21 @@ namespace SocialNetworkAPI.Controllers
             };
 
             return Ok(userDto);
+        }
+
+        [HttpPut("update-avatar")]
+        [Authorize]
+        public async Task<IActionResult> UpdateAvatar(IFormFile avatar)
+        {
+            if (avatar == null || avatar.Length == 0)
+                return BadRequest("Ảnh không hợp lệ");
+
+            var photoUrl = await photoService.UploadImageAsync(avatar);
+
+            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+            await userRepository.UpdateAvatarAsync(userId, photoUrl);
+
+            return Ok(new { avatarUrl = photoUrl });
         }
     }
 }

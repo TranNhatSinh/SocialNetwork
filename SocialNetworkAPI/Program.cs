@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using SocialNetworkAPI.Data;
+using SocialNetworkAPI.Models;
 using SocialNetworkAPI.Repositories;
 using SocialNetworkAPI.Service;
 using System.Text;
@@ -14,11 +15,11 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new() { Title = "SocialNetworkAPI", Version = "v1" });
 
-    // C?u hình ?? thêm nút "Authorize"
+    // Cau hình thêm nút "Authorize"
     c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
     {
         In = Microsoft.OpenApi.Models.ParameterLocation.Header,
-        Description = "Nh?p JWT token vào ?ây: Bearer {token}",
+        Description = "Nhap JWT token vào dây: Bearer {token}",
         Name = "Authorization",
         Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
         Scheme = "Bearer"
@@ -44,10 +45,14 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+
+builder.Services.Configure<CloudinarySettings>(
+    builder.Configuration.GetSection("CloudinarySettings"));
+
 // Cau hình Dependency Injection
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
-
+builder.Services.AddScoped<IPhotoService, PhotoService>();
 // Cau hình Authentication voi JWT
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>

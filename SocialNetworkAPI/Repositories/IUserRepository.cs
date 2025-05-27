@@ -8,6 +8,6 @@ namespace SocialNetworkAPI.Repositories
         Task AddUserAsync(User user);
         Task<User> GetUserByIdAsync(int id);
         Task<User> UpdateProfileAsync(int id, string username, string bio, string profilePicture);
-
+        Task<User> UpdateAvatarAsync(int id, string avatarUrl);
     }
 }
