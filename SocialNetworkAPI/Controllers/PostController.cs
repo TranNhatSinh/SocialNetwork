@@ -24,6 +24,7 @@ namespace SocialNetworkAPI.Controllers
         }
 
         [HttpPost]
+        [Route("CreatePost")]
         [Authorize]
         public async Task<IActionResult> CreatePost([FromForm] PostCreateDto dto)
         {
@@ -50,6 +51,7 @@ namespace SocialNetworkAPI.Controllers
 
         // GET: /api/posts
         [HttpGet]
+        [Route("GetAllPost")]
         public async Task<IActionResult> GetAllPosts()
         {
             var posts = await postRepository.GetAllPostsAsync();
@@ -68,7 +70,8 @@ namespace SocialNetworkAPI.Controllers
         }
 
         // PUT: /api/posts/{id}
-        [HttpPut("{id}")]
+        [HttpPut]
+        [Route("UpdatePost/{id}")]
         [Authorize]
         public async Task<IActionResult> UpdatePost(int id, [FromForm] PostUpdateDto dto)
         {
@@ -92,7 +95,8 @@ namespace SocialNetworkAPI.Controllers
         }
 
         // DELETE: /api/posts/{id}
-        [HttpDelete("{id}")]
+        [HttpDelete]
+        [Route("DeletePost/{id}")]
         [Authorize]
         public async Task<IActionResult> DeletePost(int id)
         {

@@ -32,9 +32,46 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SocialNetworkAPI.Controllers.CommentController",
+    "Method": "CreateCommnet",
+    "RelativePath": "api/Comment/CreateComment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "dto",
+        "Type": "SocialNetworkAPI.DTOs.CommentCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SocialNetworkAPI.Controllers.CommentController",
+    "Method": "GetCommentsByPostId",
+    "RelativePath": "api/Comment/GetCommentsByPostId/{postId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SocialNetworkAPI.Controllers.PostController",
     "Method": "CreatePost",
-    "RelativePath": "api/Post",
+    "RelativePath": "api/Post/CreatePost",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -54,8 +91,24 @@
   },
   {
     "ContainingType": "SocialNetworkAPI.Controllers.PostController",
+    "Method": "DeletePost",
+    "RelativePath": "api/Post/DeletePost/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SocialNetworkAPI.Controllers.PostController",
     "Method": "GetAllPosts",
-    "RelativePath": "api/Post",
+    "RelativePath": "api/Post/GetAllPost",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -65,7 +118,7 @@
   {
     "ContainingType": "SocialNetworkAPI.Controllers.PostController",
     "Method": "UpdatePost",
-    "RelativePath": "api/Post/{id}",
+    "RelativePath": "api/Post/UpdatePost/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -89,25 +142,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SocialNetworkAPI.Controllers.PostController",
-    "Method": "DeletePost",
-    "RelativePath": "api/Post/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "SocialNetworkAPI.Controllers.UserController",
     "Method": "GetProfile",
-    "RelativePath": "api/User/profile",
+    "RelativePath": "api/User/GetProfile",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -116,24 +153,8 @@
   },
   {
     "ContainingType": "SocialNetworkAPI.Controllers.UserController",
-    "Method": "UpdateProfile",
-    "RelativePath": "api/User/profile",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userUpdateProfileDto",
-        "Type": "SocialNetworkAPI.DTOs.UserUpdateProfileDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SocialNetworkAPI.Controllers.UserController",
     "Method": "UpdateAvatar",
-    "RelativePath": "api/User/update-avatar",
+    "RelativePath": "api/User/UpdateAvatar",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -142,6 +163,22 @@
         "Name": "avatar",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SocialNetworkAPI.Controllers.UserController",
+    "Method": "UpdateProfile",
+    "RelativePath": "api/User/UpdateProfile",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userUpdateProfileDto",
+        "Type": "SocialNetworkAPI.DTOs.UserUpdateProfileDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

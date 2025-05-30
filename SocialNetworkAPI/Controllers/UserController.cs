@@ -22,7 +22,7 @@ namespace SocialNetworkAPI.Controllers
         }
 
         [HttpGet]
-        [Route("profile")]
+        [Route("GetProfile")]
         [Authorize]
         public async Task<IActionResult> GetProfile()
         {
@@ -52,7 +52,7 @@ namespace SocialNetworkAPI.Controllers
         }
 
         [HttpPut]
-        [Route("profile")]
+        [Route("UpdateProfile")]
         [Authorize]
         public async Task<IActionResult> UpdateProfile(UserUpdateProfileDto userUpdateProfileDto)
         {
@@ -85,7 +85,7 @@ namespace SocialNetworkAPI.Controllers
             return Ok(userDto);
         }
 
-        [HttpPut("update-avatar")]
+        [HttpPut("UpdateAvatar")]
         [Authorize]
         public async Task<IActionResult> UpdateAvatar(IFormFile avatar)
         {

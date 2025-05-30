@@ -67,7 +67,71 @@
         }
       }
     },
-    "/api/Post": {
+    "/api/Comment/CreateComment": {
+      "post": {
+        "tags": [
+          "Comment"
+        ],
+        "parameters": [
+          {
+            "name": "postId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CommentCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CommentCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CommentCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Comment/GetCommentsByPostId/{postId}": {
+      "get": {
+        "tags": [
+          "Comment"
+        ],
+        "parameters": [
+          {
+            "name": "postId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Post/CreatePost": {
       "post": {
         "tags": [
           "Post"
@@ -106,7 +170,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/Post/GetAllPost": {
       "get": {
         "tags": [
           "Post"
@@ -118,7 +184,7 @@
         }
       }
     },
-    "/api/Post/{id}": {
+    "/api/Post/UpdatePost/{id}": {
       "put": {
         "tags": [
           "Post"
@@ -168,7 +234,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/Post/DeletePost/{id}": {
       "delete": {
         "tags": [
           "Post"
@@ -191,7 +259,7 @@
         }
       }
     },
-    "/api/User/profile": {
+    "/api/User/GetProfile": {
       "get": {
         "tags": [
           "User"
@@ -201,7 +269,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/User/UpdateProfile": {
       "put": {
         "tags": [
           "User"
@@ -232,7 +302,7 @@
         }
       }
     },
-    "/api/User/update-avatar": {
+    "/api/User/UpdateAvatar": {
       "put": {
         "tags": [
           "User"
@@ -267,6 +337,16 @@
   },
   "components": {
     "schemas": {
+      "CommentCreateDto": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "UserLoginDto": {
         "required": [
           "email",
