@@ -128,11 +128,6 @@ C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\SocialNetworkAPI.M
 C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\SocialNetworkAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\staticwebassets.build.json
 C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\staticwebassets.development.json
-C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\staticwebassets\msbuild.SocialNetworkAPI.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\staticwebassets\msbuild.build.SocialNetworkAPI.props
-C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SocialNetworkAPI.props
-C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SocialNetworkAPI.props
-C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\scopedcss\bundle\SocialNetworkAPI.styles.css
 C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\SocialNe.A1CF1014.Up2Date
 C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\SocialNetworkAPI.dll
@@ -144,3 +139,7 @@ C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\SocialNetworkAPI.s
 C:\Project\SocialNetworkAPI\SocialNetworkAPI\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Project\SocialNetworkAPI\SocialNetworkAPI\bin\Debug\net8.0\CloudinaryDotNet.dll
 C:\Project\SocialNetworkAPI\SocialNetworkAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Project\SocialNetworkAPI\SocialNetworkAPI\bin\Debug\net8.0\SocialNetworkAPI.staticwebassets.endpoints.json
+C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Project\SocialNetworkAPI\SocialNetworkAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SocialNetworkAPI.Service
 {
-    public class TokenService: ITokenService
+    public class TokenService : ITokenService
     {
         private readonly IConfiguration config;
 
@@ -20,12 +20,14 @@ namespace SocialNetworkAPI.Service
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             var claims = new[]
             {
-            new Claim(JwtRegisteredClaimNames.Sub, userId.ToString()),
-            new Claim(JwtRegisteredClaimNames.Email, email),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            new Claim(ClaimTypes.Email, email),
-            new Claim(ClaimTypes.NameIdentifier, userId.ToString()),
-        };
+                   new Claim(JwtRegisteredClaimNames.Sub, userId.ToString()),
+                   new Claim(JwtRegisteredClaimNames.Email, email),
+                   new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                   new Claim(ClaimTypes.Email, email),
+                   new Claim(ClaimTypes.NameIdentifier, userId.ToString()),
+                   
+               };
+
             var token = new JwtSecurityToken(
                 issuer: config["JwtSettings:Issuer"],
                 audience: config["JwtSettings:Audience"],
@@ -33,6 +35,7 @@ namespace SocialNetworkAPI.Service
                 expires: DateTime.UtcNow.AddMinutes(60),
                 signingCredentials: creds
             );
+
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }

@@ -51,6 +51,8 @@ builder.Services.Configure<CloudinarySettings>(
 
 // Cau hình Dependency Injection
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IPostRepository, PostRepository>();
+
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IPhotoService, PhotoService>();
 // Cau hình Authentication voi JWT
