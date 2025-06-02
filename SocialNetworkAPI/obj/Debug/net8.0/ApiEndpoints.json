@@ -69,6 +69,64 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SocialNetworkAPI.Controllers.LikeController",
+    "Method": "GetLikeCount",
+    "RelativePath": "api/Like/GetLikeCount/{postId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SocialNetworkAPI.Controllers.LikeController",
+    "Method": "GetUsersWhoLikedPost",
+    "RelativePath": "api/Like/GetUsersWhoLikedPost/{postId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SocialNetworkAPI.Controllers.LikeController",
+    "Method": "ToggleLike",
+    "RelativePath": "api/Like/ToggleLike/{postId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SocialNetworkAPI.Controllers.PostController",
     "Method": "CreatePost",
     "RelativePath": "api/Post/CreatePost",

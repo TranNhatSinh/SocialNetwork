@@ -1,14 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SocialNetworkAPI.Data;
 using SocialNetworkAPI.Models;
 
 namespace SocialNetworkAPI.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly ApplicationDbContext context;
+        private readonly Data.SocialDbContext context;
 
-        public UserRepository(ApplicationDbContext context)
+        public UserRepository(Data.SocialDbContext context)
         {
             this.context = context;
         }

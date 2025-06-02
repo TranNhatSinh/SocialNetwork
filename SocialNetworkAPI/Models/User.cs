@@ -15,8 +15,10 @@ namespace SocialNetworkAPI.Models
         public DateTime UpdatedAt { get; set; }
 
         // Navigation properties
+        // 1 user can have many posts
         public ICollection<Post> Posts { get; set; }
-        public ICollection<User> Followers { get; set; }
-        public ICollection<User> Following { get; set; }
+        public ICollection<Like> Likes { get; set; }
+        //public ICollection<UserFollow> Followers { get; set; }
+        //public ICollection<UserFollow> Following { get; set; }
     }
 }

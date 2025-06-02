@@ -1,14 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SocialNetworkAPI.Data;
 using SocialNetworkAPI.Models;
 
 namespace SocialNetworkAPI.Repositories
 {
     public class CommentRepository: ICommentRepository
     {
-        private readonly ApplicationDbContext context;
+        private readonly Data.SocialDbContext context;
 
-        public CommentRepository(ApplicationDbContext context)
+        public CommentRepository(Data.SocialDbContext context)
         {
             this.context = context;
         }

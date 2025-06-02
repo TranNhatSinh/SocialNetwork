@@ -15,7 +15,9 @@ namespace SocialNetworkAPI.Models
         public User User { get; set; }
 
         // Navigation properties
+        // 1 post can have many comments
         public ICollection<Comment> Comments { get; set; }
-        //public ICollection<Like> Likes { get; set; }
+        // 1 post can have many likes
+        public ICollection<Like> Likes { get; set; }
     }
 }

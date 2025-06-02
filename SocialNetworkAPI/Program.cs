@@ -42,7 +42,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 // DbContext voi PostgreSQL
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<SocialDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
